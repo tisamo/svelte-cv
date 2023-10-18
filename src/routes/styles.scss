@@ -1,0 +1,42 @@
+:root{
+  font-family: 'Poppins', sans-serif;
+  --red:#E0115F;
+  --blue: rgb(42,183,202);
+}
+
+h1{
+  font-weight: 800;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-block: 0 0 ;
+  font-size:34px;
+}
+
+h2{
+  font-weight: 800;
+  color: var(--blue);
+  margin-block: 0 0;
+  font-size:20px;
+  text-transform: uppercase;
+}
+h6{
+  font-size: 12px;
+  margin-block: 0;
+}
+p{
+  margin-block: 0;
+  font-size:20px;
+}
+
+.side-container {
+  padding: 30px;
+  height: 640px;
+  background-image: url("$lib/images/bg.jpg");
+  background-size:  100%;
+  &--150{
+    background-size: 150%;
+  }
+  &--200{
+    background-size: 200%;
+  }
+}
