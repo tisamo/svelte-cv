@@ -91,10 +91,14 @@
 
 	];
 
-
 	let currentStateIndex = 0;
 
-	const rotation = tweened({x: 0, y: 0}, {
+	const cubeRotation = tweened({x: 0, y: 0}, {
+		duration: 1000,
+		easing: cubicOut
+	});
+
+	const glassRotation = tweened(0, {
 		duration: 1000,
 		easing: cubicOut
 	});
@@ -117,6 +121,9 @@
 		setTimeout(() => {
 			$glass = 160;
 		}, 200)
+		setTimeout(() => {
+			$glassRotation = -6;
+		}, 2000)
 	})
 
 	function checkScrollDirectionIsUp(event) {
@@ -128,7 +135,7 @@
 
 	function rotateCubeToSide(stateIndex) {
 		currentStateIndex = stateIndex;
-		$rotation = cubeStates[stateIndex];
+		$cubeRotation = cubeStates[stateIndex];
 	}
 </script>
 
@@ -138,7 +145,7 @@
 </svelte:head>
 
 <div class="container">
-	<div class="cube" style="transform: rotateY({$rotation.y}deg) rotateX({$rotation.x}deg);">
+	<div class="cube" style="transform: rotateY({$cubeRotation.y}deg) rotateX({$cubeRotation.x}deg);">
 		<div class="side top">
 			<div class="side-container side-container--150">
 				<h1>Experience</h1>
@@ -176,7 +183,7 @@
 				<h2>Software Engineer</h2>
 				<h6>(please use the mousewheel for paging)</h6>
 				<img alt="myhead" class="my-big-head" src={Icon}>
-				<img alt="glass" class="glass" src={Glass} style="top: {$glass}px">
+				<img alt="glass" class="glass" src={Glass} style="top: {$glass}px; transform: rotate({$glassRotation}deg)">
 			</div>
 		</div>
 		<div class="side back">
@@ -204,7 +211,6 @@
 		height: 700px;
 		transform-style: preserve-3d;
 	}
-
 	.side {
 		width: 700px;
 		height: 700px;
@@ -212,7 +218,6 @@
 		position: absolute;
 		font-size: 2rem;
 	}
-
 	.front {
 		transform: translateZ(350px);
 	}

@@ -98,7 +98,7 @@ const options = {
   csrf_check_origin: true,
   track_server_fetches: false,
   embedded: false,
-  env_public_prefix: "PUBLIC_",
+  env_public_prefix: "",
   env_private_prefix: "",
   hooks: null,
   // added lazily, via `get_hooks`
@@ -168,7 +168,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "1tgyn3s"
+  version_hash: "s4wnx1"
 };
 function get_hooks() {
   return {};
