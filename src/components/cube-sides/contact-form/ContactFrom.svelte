@@ -31,7 +31,7 @@
         if (!err.length) {
             const contactFormData = {...$form};
             contactFormData['replyTo'] = 'kristof.krasznai95@gmail.com';
-            contactFormData['accessKey'] = env.PUBLIC_EMAIL_KEY;
+            contactFormData['accessKey'] = 'c8a0ea6f-b3f7-49b1-8249-f90d5bf499a0';
             const rawResponse = await fetch('https://api.staticforms.xyz/submit', {
                 method: 'POST',
                 headers: {
